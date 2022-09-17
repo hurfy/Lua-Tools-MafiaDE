@@ -1,0 +1,19 @@
+wheelsData = {
+	["Civilian 01"] = "wheel_civ01",
+	["Civilian 02"] = "wheel_civ02",
+	["Civilian 03"] = "wheel_civ03",
+	["Civilian 04"] = "wheel_civ04",
+	["Civilian 05"] = "wheel_civ05",
+    ["Civilian 06"] = "wheel_civ06",
+    ["Civilian 07"] = "wheel_civ07",
+    ["Civilian 08"] = "wheel_civ08",
+    ["Civilian 09"] = "wheel_civ09",
+    ["Racing 01"] = "wheel_rac01",
+    ["Racing 02"] = "wheel_rac02",
+    ["Samson Drifter"] = "wheel_samson_drifter",
+    ["Smith Moray"] = "wheel_smith_moray",
+	["Truck 01"] = "wheel_truck01",
+	["Truck 02"] = "wheel_truck02",
+	["Truck 03"] = "wheel_truck03",
+	["Truck 04"] = "wheel_truck04"
+}

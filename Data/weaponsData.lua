@@ -1,0 +1,22 @@
+weaponsData = {
+    ["Semi-Auto Pistol"] = "p_mast_a_v1",
+    ["Gold Pistol"] = "p_mast_a_v2",
+    ["Magnum Pistol"] = "rev_alf_b_v1",
+    ["Sniper"] = "sn_mayw_a_v1",
+    ["Service Revolver"] = "rev_alf_a_v1",
+    ["Shotgun"] = "sg_barker_a_v1",
+    ["Golden Shotgun"] = "sg_barker_a_v2",
+    ["Lupara"] = "sg_lupara_a_v1",
+    ["Bolt-Action Rifle"] = "rif_mayw_a_v1",
+    ["Pocket Revolver"] = "rev_mast_special_a_v1",
+    ["Golden Pocket Revolver"] = "rev_mast_special_a_v2",
+    ["Tommy Gun"] = "smg_trench_a_v1",
+    ["Golden Tommy Gun"] = "smg_trench_a_v2",
+    ["Baseball Bat"] = "wep_baseball_bat_a_v1",
+    ["Knife"] = "wep_knife_a_v1",
+    ["Brass knuckles"] = "wep_knuckle_a_v1",
+    ["Wooden Plank"] = "wep_wooden_plank_a_v1",
+    ["Crowbar"] = "wep_crowbar_a_v1",
+    ["Pipe"] = "wep_metal_bar_a_v1",
+	["Test Railgun"] = "test_railgun"
+}
