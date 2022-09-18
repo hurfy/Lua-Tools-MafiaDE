@@ -108,7 +108,7 @@ function checkDistanceToPointThread(pnt)
 	end
 end
 
------Destroy Threads--------------------------------------------------------------------------------
+-----Destroy Threads-------------------------------------------------------------------------------
 
 function killThread(thread)
 	DestroyThread(thread)
