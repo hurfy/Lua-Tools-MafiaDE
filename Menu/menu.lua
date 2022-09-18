@@ -9,15 +9,15 @@ function script:CacheMenu(menu_callback)
 end
 
 local menu = UI.SimpleMenu()
-SimpleTrainerMenu = menu
+ToolsMenuItems = menu
 
 menu:SetTitle("Lua Tools")
 
--- Items
-SimpleTrainerMenuItems = {}
-include("raceMenu.lua")
+ToolsMenuItems = {}
+-- include("raceMenu.lua")
+include("debugMenu.lua")
 
-for _,data in ipairs(SimpleTrainerMenuItems) do
+for _,data in ipairs(ToolsMenuItems) do
 	menu:AddButton(unpack(data))
 end
 
