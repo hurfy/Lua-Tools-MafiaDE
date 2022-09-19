@@ -11,4 +11,6 @@ function script:OnLoad()
 
 	-- ScriptHook.RegisterKeyHandler("menu", function()
 	-- end)
+
+	-- TODO Autoload
 end
