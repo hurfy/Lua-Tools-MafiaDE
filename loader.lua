@@ -19,6 +19,7 @@ loader._luas = {
 
     "Scripts/race.lua",
 
+    "Utils/playerUtils.lua",
     "Utils/vehicleUtils.lua"
 }
 
