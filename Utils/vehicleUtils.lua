@@ -1,5 +1,6 @@
 vehicleUtils = {}
 
+-- TODO "Motorcycle & Boats" support
 function vehicleUtils.Vehicle()
     local player = getp()
     local vehicle = player:GetOwner()
@@ -14,23 +15,23 @@ end
 function vehicleUtils.Info()
     local veh = vehicleUtils.Vehicle()
 
-    local vehPosition = veh:GetPos()
-    local vehDirection = veh:GetDir()
-    local vehName = veh:GetVehicleModelName()
-    local vehId = veh:GetCarTableId()
-    local vehDamage = veh:GetDamage()
-    local vehMotorDamage = veh:GetMotorDamage()
-    local vehActualGear = veh:GetGear()
-    local vehGearCount = veh:GetGearCount()
-    local vehActualFuel = veh:GetActualFuel()
-    local vehFuelCop = veh:GetFuelTankCapacity()
-    local vehWheelsF = veh:GetWheel(1)
-    local vehWheelsR = veh:GetWheel(2)
-    local vehDirty = veh:GetDirty()
-    local vehColorF = veh:GetColor(1)
-    local vehColorS = veh:GetColor(2)
-
     if veh ~= nil then
+        local vehPosition = veh:GetPos()
+        local vehDirection = veh:GetDir()
+        local vehName = veh:GetVehicleModelName()
+        local vehId = veh:GetCarTableId()
+        local vehDamage = veh:GetDamage()
+        local vehMotorDamage = veh:GetMotorDamage()
+        local vehActualGear = veh:GetGear()
+        local vehGearCount = veh:GetGearCount()
+        local vehActualFuel = veh:GetActualFuel()
+        local vehFuelCop = veh:GetFuelTankCapacity()
+        local vehWheelsF = veh:GetWheel(1)
+        local vehWheelsR = veh:GetWheel(2)
+        local vehDirty = veh:GetDirty()
+        local vehColorF = veh:GetColor(1)
+        local vehColorS = veh:GetColor(2)
+
         print("<--------------------------------------Vehicle-Info------------------------------------->")
         print("Name: ".. vehName .."(".. vehId ..")")
         print("Damage: ".. vehDamage .. " | Motor Damage: ".. vehMotorDamage)
@@ -43,6 +44,7 @@ function vehicleUtils.Info()
         print("Direction: ".. tostring(vehDirection.x) .. ", " .. tostring(vehDirection.y) .. ", " .. tostring(vehDirection.z))
         print("<--------------------------------------Vehicle-Info------------------------------------->")
     else
+        print("You are not in the car!")
         return
     end
 end
