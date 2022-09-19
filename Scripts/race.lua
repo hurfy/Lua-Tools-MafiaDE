@@ -17,7 +17,6 @@ end
 
 local function destroyTimer()
 	game.hud:RacingStop()
-	game.hud:RacingShowHud(false)
 	game.hud:RacingClear()
 end
 
@@ -32,6 +31,15 @@ end
 
 local function removeCheckpont()
 	game.hud:RemoveEntityIndicator(raceData.checkpointObjectiveEntity)
+end
+
+local function distanceToCheckpoint(checkpoint)
+	coreStats.checkDistanceToPointThread(checkpoint)
+
+	if coreStats.statsData.distanceToPoint < 5 then
+		coreStats.killThread(coreStats.statsData.distanceToPointThread)
+		removeCheckpont()
+	end
 end
 
 local function teleportCar(pos)
