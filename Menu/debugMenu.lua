@@ -1,30 +1,20 @@
-local vehicle = getp():GetOwner()
-
-local function playerStats()
-	if vehicle == nil then
-		
-	else
-		print("You are in a vehicle!")
-	end
-end
-
-local function vehicleStats()
-	if vehicle ~= nil then
-
-	else
-		print("You are not in the vehicle!")
-	end
-end
-
 local function firstTestFunctions()
 	-- Print here
-	-- coreStats.checkDistanceToPointThread(Math:newVector(1, 1, 1))
 end
 
 local function secondTestFunction()
 	-- Print here
-	-- coreStats.killThread(coreStats.statsData.distanceToPointThread)
 end
+
+-- local function killThreadDebug()
+-- 	UI.SimpleTextInput("Enter thread name", function(success, thread)
+-- 		if success then
+-- 			DestroyThread(coreThreads.list.thread)
+-- 		else
+-- 			print("Dialog was canceled")
+-- 		end
+-- 	end)
+-- end
 
 local function DebugMenu()
 	local menu = UI.SimpleMenu()
@@ -34,6 +24,9 @@ local function DebugMenu()
 	menu:AddButton("Vehicle Stats", vehicleUtils.Info)
 	menu:AddButton("Test Function #1", firstTestFunctions)
 	menu:AddButton("Test Function #2", secondTestFunction)
+	-- menu:AddButton("Kill Thread", killThreadDebug)
+	menu:AddButton("Print All Threads", coreThreads.printAllThreads)
+	menu:AddButton("Kill All Threads", coreThreads.killAllThreads)
 
 	return menu
 end

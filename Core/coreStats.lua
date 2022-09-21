@@ -12,20 +12,19 @@ coreStats.statsData = {
 	threads = {},
 
 	-- Stuff
-	getVehicle = getp():GetOwner(),
-	getPlayer = getp(),
 	ifNotInTheVeh = "You are not in the vehicle!",
 }
 
 function coreStats.checkCarSpeedThread(value)
-	if coreStats.statsData.threads.carSpeedThread == nil then
-		coreStats.statsData.threads.carSpeedThread = StartThread(function()
-  			if coreStats.statsData.getVehicle ~= nil then
+	if coreThreads.list.carSpeedThread == nil then
+		coreThreads.list.carSpeedThread = StartThread(function()
+			local veh = getp():GetOwner()
+  			if veh ~= nil then
   				while true do
     				if value == "km" then
-    					coreStats.statsData.actualSpeed = coreStats.statsData.getVehicle:GetSpeedFloat()
+    					coreStats.statsData.actualSpeed = veh:GetSpeedFloat()
     				elseif value == "mile" then
-    					coreStats.statsData.actualSpeed = coreStats.statsData.getVehicle:GetSpeedFloat() / 1.6093
+    					coreStats.statsData.actualSpeed = veh:GetSpeedFloat() / 1.6093
     				end
     				Sleep(1)
     			end
@@ -37,11 +36,12 @@ function coreStats.checkCarSpeedThread(value)
 end
 
 function coreStats.checkCarActualEngineRotationsThread()
-	if coreStats.statsData.threads.carActualEngineRotationsThread == nil then
-		coreStats.statsData.threads.carActualEngineRotationsThread = StartThread(function()
-  			if coreStats.statsData.getVehicle ~= nil then
+	if coreThreads.list.carActualEngineRotationsThread == nil then
+		coreThreads.list.carActualEngineRotationsThread = StartThread(function()
+			local veh = getp():GetOwner()
+  			if veh ~= nil then
   				while true do
-    				coreStats.statsData.actualEngineRotations = coreStats.statsData.getVehicle:GetEngineRotations()
+    				coreStats.statsData.actualEngineRotations = veh:GetEngineRotations()
     			Sleep(1)
     			end
     		else
@@ -52,11 +52,12 @@ function coreStats.checkCarActualEngineRotationsThread()
 end
 
 function coreStats.checkCarActualGearThread()
-	if coreStats.statsData.threads.carActualGearThread == nil then
-		coreStats.statsData.threads.carActualGearThread = StartThread(function()
-  			if coreStats.statsData.getVehicle ~= nil then
+	if coreThreads.list.carActualGearThread == nil then
+		coreThreads.list.carActualGearThread = StartThread(function()
+			local veh = getp():GetOwner()
+  			if veh ~= nil then
   				while true do
-    				coreStats.statsData.actualGear = coreStats.statsData.getVehicle:GetGear()
+    				coreStats.statsData.actualGear = veh:GetGear()
     			Sleep(1)
     			end
     		else
@@ -67,11 +68,12 @@ function coreStats.checkCarActualGearThread()
 end
 
 function coreStats.checkCarActualFuelThread()
-	if coreStats.statsData.threads.carActualFuelThread == nil then
-		coreStats.statsData.threads.carActualFuelThread = StartThread(function()
-  			if coreStats.statsData.getVehicle ~= nil then
+	if coreThreads.list.carActualFuelThread == nil then
+		coreThreads.list.carActualFuelThread = StartThread(function()
+			local veh = getp():GetOwner()
+  			if veh ~= nil then
   				while true do
-    				coreStats.statsData.actualFuel = coreStats.statsData.getVehicle:GetActualFuel()
+    				coreStats.statsData.actualFuel = veh:GetActualFuel()
     			Sleep(1)
     			end
     		else
@@ -82,11 +84,12 @@ function coreStats.checkCarActualFuelThread()
 end
 
 function coreStats.checkCarActualDirtyThread()
-	if coreStats.statsData.threads.carActualDirtyThread == nil then
-		coreStats.statsData.threads.carActualDirtyThread = StartThread(function()
-  			if coreStats.statsData.getVehicle ~= nil then
+	if coreThreads.list.carActualDirtyThread == nil then
+		coreThreads.list.carActualDirtyThread = StartThread(function()
+			local veh = getp():GetOwner()
+  			if veh ~= nil then
   				while true do
-    				coreStats.statsData.actualDirty = coreStats.statsData.getVehicle:GetDirty()
+    				coreStats.statsData.actualDirty = veh:GetDirty()
     			Sleep(1)
     			end
     		else
@@ -97,28 +100,13 @@ function coreStats.checkCarActualDirtyThread()
 end
 
 function coreStats.checkDistanceToPointThread(pnt)
-	if coreStats.statsData.distanceToPointThread == nil then
-		coreStats.statsData.distanceToPointThread = StartThread(function()
+	if coreThreads.list.distanceToPointThread == nil then
+		coreThreads.list.distanceToPointThread = StartThread(function()
+			local veh = getp():GetOwner()
 			while true do
-				distanceToPoint = getp():GetPos():DistanceToPoint(pnt)
-				print(distanceToPoint)
+				coreStats.statsData.distanceToPoint = veh:DistanceToPoint(pnt)
 				Sleep(1)
 			end
 		end)
 	end
-end
-
------Destroy Threads-------------------------------------------------------------------------------
-
-function coreStats.killThread(thread)
-	DestroyThread(thread)
-end
-
-function coreStats.killAllThreads()
-	-- for i = 1, #coreStats.statsData.threads do
-	-- 	DestroyThread(i)
-	-- 	coreStats.statsData.threads[i] = nil
-	-- 	i = i + 1
-	-- end
-	DestroyThread(coreStats.statsData.threads)
 end
