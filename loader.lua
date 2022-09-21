@@ -2,6 +2,7 @@ loader = {}
 
 loader._luas = {
     "Core/coreStats.lua",
+    "Core/coreThreads.lua",
     
     "Data/animsData.lua",
     "Data/carTuneData.lua",
@@ -13,7 +14,7 @@ loader._luas = {
     "Data/weatherData.lua",
     "Data/wheelsData.lua",
 
-    "Menu/menu.lua",
+    "Menu/mainMenu.lua",
     "Menu/raceMenu.lua",
     "Menu/debugMenu.lua",
 
