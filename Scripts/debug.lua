@@ -16,6 +16,8 @@ end
 -- 	end)
 -- end
 
+--MENU--
+
 local function DebugMenu()
 	local menu = UI.SimpleMenu()
 	menu:SetTitle("Debug Menu")

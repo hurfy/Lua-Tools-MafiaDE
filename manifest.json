@@ -1,17 +1,17 @@
 {
-  "author": "hurfy",
-  "enableAutoRefresh": true,
-  "entrypoint": "main.lua",
-  "keyBinds": {
-    "menu": "F3"
-  },
-  "keyBindsInfo": [
-    {
-      "info": "Toggle Menu",
-      "name": "menu",
-      "text": "Tools Menu"
-    }
-  ],
-  "name": "Lua Tools",
-  "version": "0.1"
+    "author": "hurfy",
+    "enableAutoRefresh": true,
+    "entrypoint": "main.lua",
+    "keyBinds": {
+        "menu": "F3"
+    },
+    "keyBindsInfo": [
+        {
+            "info": "Toggle Menu",
+            "name": "menu",
+            "text": "Tools Menu"
+        }
+    ],
+    "name": "Lua Tools",
+    "version": "0.1"
 }

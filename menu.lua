@@ -1,5 +1,3 @@
-mainMenu = {}
-
 local script = ScriptHook.CurrentScript()
 
 function script:CacheMenu(menu_callback)
@@ -10,23 +8,23 @@ function script:CacheMenu(menu_callback)
 	end
 end
 
-mainMenu.menu = UI.SimpleMenu()
-ToolsMenuItems = mainMenu.menu
+menu = UI.SimpleMenu()
+ToolsMenuItems = menu
 
-mainMenu.menu:SetTitle("Lua Tools")
+menu:SetTitle("Lua Tools")
 
 ToolsMenuItems = {}
-include("raceMenu.lua")
-include("debugMenu.lua")
+include("Scripts/race.lua")
+include("Scripts/debug.lua")
 
 for _,data in ipairs(ToolsMenuItems) do
-	mainMenu.menu:AddButton(unpack(data))
+	menu:AddButton(unpack(data))
 end
 
 ScriptHook.RegisterKeyHandler("menu", function()
-	mainMenu.menu:Toggle()
+	menu:Toggle()
 end)
 
-function mainMenu.hide()
-	mainMenu.menu:Deactivate()
+function mainMenuHide()
+	menu:Deactivate()
 end
