@@ -11,6 +11,7 @@ loader._luas = {
     "Data/checkpointsData.lua",
     "Data/colorsData.lua",
     "Data/componentsData.lua",
+    "Data/raceData.lua",
     "Data/vehiclesData.lua",
     "Data/weaponsData.lua",
     "Data/weatherData.lua",
@@ -31,4 +32,4 @@ function loader.ImportLua(luas)
             require(lua)
         end
     end
-end  
+end
